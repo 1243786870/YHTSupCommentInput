@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ViewController *viewCon = [[ViewController alloc]init];
+    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:viewCon];
+    nc.navigationBar.barStyle =  UIBarStyleBlackTranslucent;
+    nc.navigationBar.alpha = 1;
+    self.window.rootViewController = nc;
+    
     // Override point for customization after application launch.
     return YES;
 }
